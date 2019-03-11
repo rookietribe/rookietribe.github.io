@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>菜鳥部落</title>
+  
+  <subtitle>Rookie Tribe</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://rookietribe.github.io/"/>
+  <updated>2019-03-11T00:03:28.877Z</updated>
+  <id>https://rookietribe.github.io/</id>
+  
+  <author>
+    <name>菜鳥部落</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置 Hexo 本地环境</title>
+    <link href="https://rookietribe.github.io/2019/03/10/configuring-the-local-environment-of-hexo/"/>
+    <id>https://rookietribe.github.io/2019/03/10/configuring-the-local-environment-of-hexo/</id>
+    <published>2019-03-10T01:25:09.000Z</published>
+    <updated>2019-03-11T00:03:28.877Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://goo.gl/gZqBTF" target="_blank" rel="noopener">菜鸟部落</a> 打算推出一个 Hexo 博客系列，来分享一下博客的搭建历程。今天是第一部分，配置 Hexo 本地环境。</p><h1 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h1><p>Hexo 是一个基于 Node.js 的静态网页生成器，同时也是一个快速、简洁、高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析博客文章，并且可以在几秒内，产生静态博客。Hexo 提供了丰富的插件和主题，借助这些我们可以高度定制我们的博客。</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装 Hexo 相当简单，如果你已经安装好了 Node.js 环境，只要一条命令就能完成安装。</p><h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>Windows 用户 <a href="#Windows-用户">点击这里</a><br>Mac、Linux 用户 <a href="#Mac、Linux-用户">点击这里</a>  </p><h3 id="Windows-用户"><a href="#Windows-用户" class="headerlink" title="Windows 用户"></a>Windows 用户</h3><p>前往 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js 官网</a> 下载安装包。这里我们选择左边的 <code>10.15.3 LTS</code> 版本进行下载。</p><div style="width: 700px; max-width: 100%; margin: auto"><img src="https://i.imgur.com/ZCi2E8w.png" alt="Node.js"></div><p>下载完成后，打开安装包进行安装，安装过程没有什么特别要注意的地方。</p><div style="width: 700px; max-width: 100%; margin: auto"><img src="https://i.imgur.com/aesBh2S.png" alt="安装步骤 1"></div><div style="width: 700px; max-width: 100%; margin: auto"><img src="https://i.imgur.com/xZBRPlO.png" alt="安装步骤 2"></div><div style="width: 700px; max-width: 100%; margin: auto"><img src="https://i.imgur.com/g0a19C1.png" alt="安装步骤 3"></div><div style="width: 700px; max-width: 100%; margin: auto"><img src="https://i.imgur.com/oLfZL8O.png" alt="安装步骤 4"></div><p>安装完成后，打开命令行工具，使用下图中的命令，查看 Node.js 是否安装正确。</p><div style="width: 700px; max-width: 100%; margin: auto"><img src="https://i.imgur.com/OV5XRrQ.png" alt="检查安装"></div><h3 id="Mac、Linux-用户"><a href="#Mac、Linux-用户" class="headerlink" title="Mac、Linux 用户"></a>Mac、Linux 用户</h3><p>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>。</p><p>使用 curl 工具安装 nvm</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure><p>使用 wget 工具 安装 nvm</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</span><br></pre></td></tr></table></figure><p>安装完成后，重启终端并执行以下命令检查 nvm 是否正确安装。如果输出版本号，就表明正确安装。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm --version</span><br></pre></td></tr></table></figure><p>然后使用以下命令安装 Node.js</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install stable</span><br></pre></td></tr></table></figure><h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>Node.js 完成后，即可使用以下命令安装 Hexo。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p>安装 Hexo 完成后，执行下列命令，Hexo 将会在指定文件夹中创建你的博客。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 初始化、创建博客</span><br><span class="line">hexo init blog</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span> 进入刚刚创建的文件夹</span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 安装博客程序 Node.js 依赖</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>执行以下命令，在本地运行 Hexo 博客。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>如何你看到类似下面的信息输出，使用浏览器访问下面 url，如这里的是 <code>http://localhost:4000</code>，就可以打开刚刚创建的博客啦。</p><p>至此，我们就配置完 Hexo 的本地环境啦。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure><h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>Hexo 博客系列分为 3 个部分：</p><ul><li>配置 Hexo 本地环境</li><li>插件、主题安装及个性化修改</li><li>部署博客至 Github Page</li></ul><p>如果大家期待后续的部分，记得关注菜鸟部落哦。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://goo.gl/gZqBTF&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;菜鸟部落&lt;/a&gt; 打算推出一个 Hexo 博客系列，来分享一下博客的搭建历程。今天是第一部分，配置 Hexo 本地环境。&lt;/p&gt;
+&lt;h1 id=&quot;什
+      
+    
+    </summary>
+    
+      <category term="Hexo 博客系列" scheme="https://rookietribe.github.io/categories/Hexo-%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Hexo" scheme="https://rookietribe.github.io/tags/Hexo/"/>
+    
+      <category term="博客" scheme="https://rookietribe.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="环境配置" scheme="https://rookietribe.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>越狱插件推荐</title>
+    <link href="https://rookietribe.github.io/2019/03/02/jailbreak-tweaks-recommend/"/>
+    <id>https://rookietribe.github.io/2019/03/02/jailbreak-tweaks-recommend/</id>
+    <published>2019-03-02T06:50:36.000Z</published>
+    <updated>2019-03-11T03:33:14.337Z</updated>
+    
+    <content type="html"><![CDATA[<p>前段时间 iOS 12 的越狱工具已经发布了，相信对越狱感兴趣的小伙伴们已经进行了尝试。大家越狱之后都安装了什么插件呢？今天 <a href="https://goo.gl/gZqBTF" target="_blank" rel="noopener">菜鸟部落</a> 就给大家分享几款实用的插件吧。</p><h1 id="BetterCCXI"><a href="#BetterCCXI" class="headerlink" title="BetterCCXI"></a>BetterCCXI</h1><p><strong style="color: #008000">可自定义控制中心行列排布，还可以使音乐控件显示专辑封面。</strong><br><strong>官方源地址：</strong><strong><a href="https://repo.packix.com/" target="_blank" rel="noopener" style="color: #0052ff">https://repo.packix.com/</a></strong> - $1.49<br><strong>免费源地址：</strong><strong><a href="https://repo.xarold.com/" target="_blank" rel="noopener" style="color: #0052ff">https://repo.xarold.com/</a></strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/effiQnz.jpg" alt="BetterCCXI"></div><h1 id="BetterShutdown"><a href="#BetterShutdown" class="headerlink" title="BetterShutdown"></a>BetterShutdown</h1><p><strong style="color: #008000">电源键增强插件。有【关机】、【重启】、【注销】三种功能。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/5qmP0jL.jpg" alt="BetterShutdown"></div><h1 id="Bolders"><a href="#Bolders" class="headerlink" title="Bolders"></a>Bolders</h1><p><strong style="color: #008000">美化与增加打开桌面文件夹后的显示效果。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/502kPIx.jpg" alt="Bolders"></div><h1 id="CCLinker"><a href="#CCLinker" class="headerlink" title="CCLinker"></a>CCLinker</h1><p><strong style="color: #008000">控制中心长按图标呼出相应设置。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><video controls poster="//i.imgur.com/gXWOfv4h.jpg" preload="auto" webkit-playsinline style="width: 250px;"><source src="//i.imgur.com/gXWOfv4.mp4" type="video/mp4"></video></div><h1 id="Clock-Delete"><a href="#Clock-Delete" class="headerlink" title="Clock Delete"></a>Clock Delete</h1><p><strong style="color: #008000">闹钟增强插件。左滑可以快速删除闹钟。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/YQw5GqN.png" alt="Clock Delete"></div><h1 id="Cylinder"><a href="#Cylinder" class="headerlink" title="Cylinder"></a>Cylinder</h1><p><strong style="color: #008000">桌面图标动画效果自定义插件。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><video controls poster="//i.imgur.com/4eGajX6h.jpg" preload="auto" webkit-playsinline style="width: 250px;"><source src="//i.imgur.com/4eGajX6.mp4" type="video/mp4"></video></div><h1 id="DeleteForever"><a href="#DeleteForever" class="headerlink" title="DeleteForever"></a>DeleteForever</h1><p><strong style="color: #008000">为照片删除添加【Permanently】按钮，永久删除照片，不需要再到最近删除里再删一次。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/xCUjgEe.png" alt="DeleteForever"></div><h1 id="DismissProgress"><a href="#DismissProgress" class="headerlink" title="DismissProgress"></a>DismissProgress</h1><p><strong style="color: #008000">为 Cydia 的安装和卸载界面添加一个【关闭】按钮，可以不用每安装或卸载一次插件就必须点一次注销，但最后仍需注销一次才能让所有的安装或卸载生效。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/l8l570B.png" alt="DismissProgress"></div><h1 id="Melior"><a href="#Melior" class="headerlink" title="Melior"></a>Melior</h1><p><strong style="color: #008000">另一种风格的音量调节弹窗。</strong><br><strong>源地址：</strong><strong><a href="https://repo.xarold.com/" target="_blank" rel="noopener" style="color: #0052ff">https://repo.xarold.com/</a></strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/WnlvxZg.jpg" alt="Melior"></div><h1 id="SwipeForMore"><a href="#SwipeForMore" class="headerlink" title="SwipeForMore"></a>SwipeForMore</h1><p><strong style="color: #008000">Cydia 功能增强插件，左滑里面的插件可以呼出【列表安装/卸载】等功能，有效解决插件每次安装或卸载都需要注销一次的繁琐过程。只需在设置里将 SwipeForMore 的 Use icons 开关关闭，即可中文显示。</strong><br><strong>源地址：</strong><strong style="color: #0052ff">自带 BigBoss 源</strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/vbDoBsX.png" alt="SwipeForMore"></div><h1 id="Switchus"><a href="#Switchus" class="headerlink" title="Switchus"></a>Switchus</h1><p><strong style="color: #008000">增加后台卡片下滑【关闭当前应用】、【关闭所有应用】、【关闭除当前应用外其他所有应用】、【注销】、【重启】、【关机】、【返回最近应用】等功能。</strong><br><strong>官方源地址：</strong><strong><a href="https://repo.packix.com/" target="_blank" rel="noopener" style="color: #0052ff">https://repo.packix.com/</a></strong> - $0.99<br><strong>免费源地址：</strong><strong><a href="https://repo.xarold.com/" target="_blank" rel="noopener" style="color: #0052ff">https://repo.xarold.com/</a></strong></p><div style="width: 250px; margin: auto"><img src="https://i.imgur.com/MFpXa5r.png" alt="Switchus"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前段时间 iOS 12 的越狱工具已经发布了，相信对越狱感兴趣的小伙伴们已经进行了尝试。大家越狱之后都安装了什么插件呢？今天 &lt;a href=&quot;https://goo.gl/gZqBTF&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;菜鸟部落&lt;/a&gt; 就给
+      
+    
+    </summary>
+    
+      <category term="分享推荐" scheme="https://rookietribe.github.io/categories/%E5%88%86%E4%BA%AB%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="iOS 12" scheme="https://rookietribe.github.io/tags/iOS-12/"/>
+    
+      <category term="越狱插件" scheme="https://rookietribe.github.io/tags/%E8%B6%8A%E7%8B%B1%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="Cydia Tweak" scheme="https://rookietribe.github.io/tags/Cydia-Tweak/"/>
+    
+  </entry>
+  
+</feed>
